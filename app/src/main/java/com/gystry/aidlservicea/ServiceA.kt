@@ -22,9 +22,10 @@ class ServiceA : Service() {
         return MyBind()
     }
 
-    class MyBind : Binder() {
-        fun getString() {
-
+    class MyBind : MyAidlService.Stub() {
+        override fun getString(): String? {
+            Log.e("ServiceA.MyBind", "getString")
+            return "这是服务器的aidl给你的字符串"
         }
     }
 }
