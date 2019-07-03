@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            Log.e("btn_connect","onServiceConnected")
+            Log.e("btn_connect", "onServiceConnected")
             myBinder = MyAidlService.Stub.asInterface(service)
             tv_content.text = myBinder?.string
         }
@@ -33,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_connect.setOnClickListener {
-            Log.e("btn_connect","setOnClickListener")
+            Log.e("btn_connect", "setOnClickListener")
             val intent = Intent()
             intent.action = "com.gystry.aidlservicea.ServiceA"
-            intent.`package` = "com.gystry.aidlservicea"
+            intent.setPackage("com.gystry.aidlservicea")
             bindService(intent, connect, Context.BIND_AUTO_CREATE)
         }
     }

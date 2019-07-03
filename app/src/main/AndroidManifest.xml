@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name=".ServiceA">
+        <service android:name=".ServiceA"
+                 android:enabled="true"
+                 android:exported="true">
             <intent-filter>
                 <action android:name="com.gystry.aidlservicea.ServiceA"/>
             </intent-filter>
