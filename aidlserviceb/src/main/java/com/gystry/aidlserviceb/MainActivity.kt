@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             myBinder = MyAidlService.Stub.asInterface(service)
             tv_content.text = myBinder?.string
         }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
